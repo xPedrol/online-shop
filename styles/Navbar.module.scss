@@ -1,0 +1,140 @@
+@use "fonts" as *;
+
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  //border: 1px solid #ccc;
+  //border-top: none;
+}
+
+.header {
+  height: 110px;
+  width: 100%;
+  //border-bottom: 3px solid black;
+  background-color: black;
+}
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  color: white;
+  padding-inline: 10px;
+  @extend .poppins
+}
+
+.nav {
+  flex-grow: 1;
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  justify-content: space-between;
+
+  ul {
+    flex: 75%;
+    display: flex;
+    align-items: stretch;
+    list-style-type: none;
+  }
+
+  li {
+    display: flex;
+    align-items: stretch;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 15px;
+    @extend .robotoCondensed;
+  }
+
+  a:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .search {
+    flex: 25%;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    justify-content: stretch;
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      margin-right: 1px;
+      border: none;
+      background-color: #f1f0f0;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      @extend .robotoCondensed;
+    }
+
+    button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      border-radius: 10px;
+      border: none;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      background-color: #f1f0f0;
+      @extend .robotoCondensed;
+
+      .searchIcon {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.startSide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.endSide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  > * {
+    cursor: pointer;
+    margin-right: 25px;
+    transition: 100ms;
+  }
+
+  > *:hover {
+    transform: scale(1.5);
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  h1 {
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
+}

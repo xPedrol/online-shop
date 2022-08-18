@@ -1,0 +1,25 @@
+$bXs: 400px;
+$bSm: 576px;
+$bMd: 768px;
+$bLg: 992px;
+$bXl: 1200px;
+$b2xl: 1400px;
+$b3xl: 1600px;
+
+@mixin min-max($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin min($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin max($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
