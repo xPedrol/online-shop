@@ -1,0 +1,85 @@
+@use "fonts" as *;
+.sliders{
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 900px;
+  min-width: 300px;
+  .slider{
+    display: grid;
+    justify-content: stretch;
+    height: 100%;
+    img{
+      grid-column: 1/12;
+      grid-row: 1/12;
+      width: 100%;
+      height: 500px;
+    }
+    .sliderContent{
+      grid-column: 2/6;
+      grid-row: 8/9;
+      padding: 15px;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      h3{
+        text-align: end;
+        @extend .poppins;
+      }
+      h1{
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: #f0e68c;
+      }
+      button{
+        margin-top: 15px;
+        border: none;
+        padding: 5px 10px 5px 10px;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #f0e68c;
+        @extend .robotoCondensed;
+      }
+      h1{
+        @extend .robotoCondensed;
+      }
+    }
+  }
+}
+.trendingProducts{
+  margin-top: 100px;
+  > .description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    h2{
+      @extend .poppins;
+    }
+    p{
+      @extend .poppins;
+      color: #f0e68c;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #f0e68c;
+    }
+    .descriptionTitle{
+      display: flex;
+      align-items: center;
+      .trendingIcon{
+        margin-left: 10px;
+        font-size: 25px;
+      }
+    }
+  }
+  .trendingProductsList{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 50px;
+    > *{
+      background-color: aqua;
+    }
+  }
+}
