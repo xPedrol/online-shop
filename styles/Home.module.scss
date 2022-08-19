@@ -43,13 +43,13 @@
 }
 
 .promo {
-  background-color: #2f4f4f;
+  background-color: #fff;
   margin: 0 auto;
 }
 
 .sliders {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   //width: 800px;
   width: 100%;
   min-width: 300px;
@@ -134,10 +134,10 @@
   gap: 10px;
 
   > * {
-    background-color: #2f4f4f;
+    background-color: #181818;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     cursor: pointer;
     transition: 100ms;
   }
@@ -148,7 +148,7 @@
 
   .collectionContent {
     @extend .imgContentGrid;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .womenCollection {

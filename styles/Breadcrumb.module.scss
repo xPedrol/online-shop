@@ -1,0 +1,31 @@
+@use "fonts" as *;
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  @extend .robotoCondensed;
+}
+.breadcrumbItem{
+  font-size: 0.8rem;
+  a{
+    text-decoration: none;
+    color: unset;
+  }
+}
+.breadcrumbItem:not(:last-child):hover{
+    text-decoration: underline;
+    a{
+      opacity: 0.5;
+    }
+}
+.breadcrumbItem + .breadcrumbItem::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #6c757d;
+  content: "/";
+}

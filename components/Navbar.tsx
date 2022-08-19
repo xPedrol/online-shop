@@ -10,7 +10,7 @@ const Navbar = () => {
                 <div className={`${styles.topHeader}`}>
                     <div className={styles.startSide}>
                         <div className={styles.logo}>
-                            <AiOutlineShop fontSize={'50px'}/>
+                            {/*<AiOutlineShop fontSize={'50px'}/>*/}
                             <h1>Online Shop</h1>
                         </div>
                     </div>

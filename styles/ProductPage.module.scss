@@ -1,0 +1,54 @@
+@use 'fonts' as *;
+
+.main {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.product {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+
+  .productImage {
+    max-width: 400px;
+    flex: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .productInfo {
+    flex: 50%;
+    margin-left: 10px;
+    flex-grow: 1;
+
+    hr {
+      margin: 10px 0 10px 0;
+    }
+
+    .productHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .productInfoTitle {
+        @extend .poppins;
+      }
+
+      .productInfoPrice {
+        @extend .robotoCondensed;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+    }
+
+    .productInfoDescription {
+      @extend .robotoCondensed;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+  }
+}

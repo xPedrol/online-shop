@@ -16,6 +16,7 @@
 .header {
   min-height: 110px;
   width: 100%;
+  background-color: #181818;
   //border-bottom: 3px solid black;
 }
 
@@ -26,7 +27,8 @@
   flex-grow: 1;
   color: white;
   padding-inline: 10px;
-  background-color: black;
+  background-color: #181818;
+  min-height: 50px;
   @extend .poppins
 }
 
@@ -37,6 +39,7 @@
   width: 100%;
   background-color: #fff;
   justify-content: space-between;
+  border-radius: 10px 10px 0 0;
 
   ul {
     flex: 75%;
@@ -62,7 +65,7 @@
   }
 
   a:hover {
-    background-color: black;
+    background-color: #181818;
     color: white;
   }
 
@@ -135,7 +138,7 @@
   align-items: center;
 
   h1 {
-    margin-left: 20px;
+    //margin-left: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 900;
