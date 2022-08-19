@@ -25,17 +25,33 @@ const Home: NextPage = () => {
                                 <button>Shop now</button>
                             </div>
                         </div>
-                        <div className={styles.arrowRight}>
-                            <IoIosArrowForward/>
+                        <div className={styles.slider}>
+                            <img src={'/slide1.jpg'} alt={'slider-3'}/>
+                            <div className={styles.sliderContent}>
+                                <h3>Sales 20% OFF</h3>
+                                <h1>Women&apos;s Fashion</h1>
+                                <button>Shop now</button>
+                            </div>
                         </div>
-                        <div className={styles.arrowLeft}>
-                            <IoIosArrowBack/>
+                        <div className={styles.slider}>
+                            <img src={'/slide1.jpg'} alt={'slider-3'}/>
+                            <div className={styles.sliderContent}>
+                                <h3>Sales 20% OFF</h3>
+                                <h1>Women&apos;s Fashion</h1>
+                                <button>Shop now</button>
+                            </div>
                         </div>
-                        <div className={styles.sliderCount}>
-                            <div className={styles.sliderOutlinePoint}></div>
-                            <div className={styles.sliderOutlinePoint}></div>
-                            <div className={styles.sliderOutlinePoint}></div>
-                        </div>
+                        {/*<div className={styles.arrowRight}>*/}
+                        {/*    <IoIosArrowForward/>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.arrowLeft}>*/}
+                        {/*    <IoIosArrowBack/>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.sliderCount}>*/}
+                        {/*    <div className={styles.sliderOutlinePoint}></div>*/}
+                        {/*    <div className={styles.sliderOutlinePoint}></div>*/}
+                        {/*    <div className={styles.sliderOutlinePoint}></div>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
                 <Container>
