@@ -18,7 +18,7 @@ const Home: NextPage = () => {
                 <div className={styles.promo}>
                     <div className={styles.sliders}>
                         <div className={styles.slider}>
-                            <img src={'/slide1.jpg'} alt={'slider-3'}/>
+                            <img src={'/slide1.jpg'} alt={'slider-1'}/>
                             <div className={styles.sliderContent}>
                                 <h3>Sales 20% OFF</h3>
                                 <h1>Women&apos;s Fashion</h1>
@@ -26,18 +26,18 @@ const Home: NextPage = () => {
                             </div>
                         </div>
                         <div className={styles.slider}>
-                            <img src={'/slide1.jpg'} alt={'slider-3'}/>
+                            <img src={'/slide3.jpg'} alt={'slider-3'}/>
                             <div className={styles.sliderContent}>
-                                <h3>Sales 20% OFF</h3>
-                                <h1>Women&apos;s Fashion</h1>
+                                <h3>Sales from 69 dollars</h3>
+                                <h1>mega promotion</h1>
                                 <button>Shop now</button>
                             </div>
                         </div>
                         <div className={styles.slider}>
-                            <img src={'/slide1.jpg'} alt={'slider-3'}/>
+                            <img src={'/slide2.jpg'} alt={'slider-2'}/>
                             <div className={styles.sliderContent}>
-                                <h3>Sales 20% OFF</h3>
-                                <h1>Women&apos;s Fashion</h1>
+                                <h3>Sales 10% OFF</h3>
+                                <h1>Men&apos;s Day</h1>
                                 <button>Shop now</button>
                             </div>
                         </div>
@@ -68,6 +68,29 @@ const Home: NextPage = () => {
                             <ProductCard name={'Tênis Nike 2'} price={'159.90'} tag={'Masculino / Shoes'} img={'/products/tenis2.webp'}/>
                             <ProductCard name={'Camisa Nike 1'} price={'180.60'} tag={'Masculino / T-Shirt'} img={'/products/blusa1.webp'}/>
                             <ProductCard name={'Camisa Nike 2'} price={'115.00'} tag={'Masculino / T-Shirt'} img={'/products/blusa2.webp'}/>
+                        </div>
+                    </div>
+                    <div className={styles.collections}>
+                        <div className={styles.womenCollection}>
+                            <div className={styles.collectionContent}>
+                                <h3>Sales 10% OFF</h3>
+                                <h1>Women&apos;s Collection</h1>
+                                {/*<button>See Offers</button>*/}
+                            </div>
+                        </div>
+                        <div className={styles.menCollection}>
+                            <div className={styles.collectionContent}>
+                                <h3>Sales 10% OFF</h3>
+                                <h1>Men&apos;s Collection</h1>
+                                {/*<button>See Offers</button>*/}
+                            </div>
+                        </div>
+                        <div className={styles.genericCollection}>
+                            <div className={styles.collectionContent}>
+                                <h3>Sales 10% OFF</h3>
+                                <h1>Generic&apos;s Collection</h1>
+                                {/*<button>See Offers</button>*/}
+                            </div>
                         </div>
                     </div>
                 </Container>

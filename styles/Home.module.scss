@@ -1,6 +1,43 @@
 @use "fonts" as *;
 @use "breakpoins" as *;
 
+.imgContentGrid {
+  grid-column: 2/6;
+  grid-row: 8/9;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+
+  h3 {
+    text-align: end;
+    @extend .poppins;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #f0e68c;
+  }
+
+  button {
+    margin-top: 15px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0e68c;
+    @extend .robotoCondensed;
+  }
+
+  h1 {
+    @extend .robotoCondensed;
+  }
+}
+
 .main {
   padding-bottom: 20px;
 }
@@ -38,43 +75,11 @@
     }
 
     .sliderContent {
-      grid-column: 2/6;
-      grid-row: 8/9;
-      padding: 15px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-
-      h3 {
-        text-align: end;
-        @extend .poppins;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        color: #f0e68c;
-      }
-
-      button {
-        margin-top: 15px;
-        border: none;
-        padding: 5px 10px 5px 10px;
-        font-size: 1.25rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: #f0e68c;
-        @extend .robotoCondensed;
-      }
-
-      h1 {
-        @extend .robotoCondensed;
-      }
+      @extend .imgContentGrid;
     }
   }
-  .slider:last-child{
+
+  .slider:last-child {
     margin-right: 0;
   }
 }
@@ -119,6 +124,70 @@
   }
 }
 
+.collections {
+  margin-top: 50px;
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  height: 900px;
+  gap: 10px;
+
+  > * {
+    background-color: #2f4f4f;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    cursor: pointer;
+    transition: 100ms;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .collectionContent {
+    @extend .imgContentGrid;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .womenCollection {
+    background-image: url("../public/womenCollection.jpg");
+    background-position: center;
+    background-size: cover;
+    grid-column: 1/13;
+    grid-row: 1/5;
+  }
+
+  .womenCollection:hover {
+    transform: scale(1.05);
+  }
+
+  .menCollection {
+    background-image: url("../public/menCollection.jpg");
+    background-position: center;
+    background-size: cover;
+    grid-column: 1/13;
+    grid-row: 5/9;
+  }
+
+  .menCollection:hover {
+    transform: scale(1.05);
+  }
+
+  .genericCollection {
+    background-image: url("../public/genericCollection.jpg");
+    background-position: center;
+    background-size: cover;
+    grid-column: 1/13;
+    grid-row: 9/13;
+
+  }
+
+  .genericCollection:hover {
+    transform: scale(1.05);
+  }
+}
 
 @include min($bSm) {
   .trendingProducts {
@@ -140,6 +209,31 @@
       min-width: 500px;
     }
   }
+  .collections {
+    .genericCollection {
+      border-radius: 0 0 20px 0;
+      grid-row: 7/13;
+      grid-column: 7/13;
+      .collectionContent {
+        border-radius: 0 0 20px 0;
+      }
+    }
+
+    .womenCollection {
+      border-radius: 20px 0 0 20px;
+      grid-row: 1/13;
+      grid-column: 1/7;
+      .collectionContent {
+        border-radius: 0 0 0 20px;
+      }
+    }
+
+    .menCollection {
+      border-radius: 0 20px 0 0;
+      grid-row: 1/7;
+      grid-column: 7/13;
+    }
+  }
 }
 
 @include min($bLg) {
@@ -154,6 +248,7 @@
     }
   }
 }
+
 @include min($bXl) {
   .trendingProducts {
     .trendingProductsList {
@@ -162,6 +257,7 @@
   }
   .sliders {
     padding: 40px 0 40px 0;
+
     .slider {
       min-width: 750px;
     }
