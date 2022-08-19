@@ -4,6 +4,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import Container from "../components/Container";
 import {FiTrendingUp} from "react-icons/fi";
+import {IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
+import ProductCard from "../components/ProductCard";
 
 const Home: NextPage = () => {
     return (
@@ -12,33 +14,48 @@ const Home: NextPage = () => {
                 <title>Home</title>
             </Head>
             <Navbar/>
-            <Container>
-                <div className={styles.sliders}>
-                    <div className={styles.slider}>
-                        <img src={'/slide1.jpg'} alt={'slider-3'}/>
-                        <div className={styles.sliderContent}>
-                            <h3>Sales 20% OFF</h3>
-                            <h1>Women's Fashion</h1>
-                            <button>Shop now</button>
+            <main className={styles.main}>
+                <div className={styles.promo}>
+                    <div className={styles.sliders}>
+                        <div className={styles.slider}>
+                            <img src={'/slide1.jpg'} alt={'slider-3'}/>
+                            <div className={styles.sliderContent}>
+                                <h3>Sales 20% OFF</h3>
+                                <h1>Women&apos;s Fashion</h1>
+                                <button>Shop now</button>
+                            </div>
+                        </div>
+                        <div className={styles.arrowRight}>
+                            <IoIosArrowForward/>
+                        </div>
+                        <div className={styles.arrowLeft}>
+                            <IoIosArrowBack/>
+                        </div>
+                        <div className={styles.sliderCount}>
+                            <div className={styles.sliderOutlinePoint}></div>
+                            <div className={styles.sliderOutlinePoint}></div>
+                            <div className={styles.sliderOutlinePoint}></div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.trendingProducts}>
-                   <div className={styles.description}>
-                       <div className={styles.descriptionTitle}>
-                           <h2>Trending Products</h2>
-                           <FiTrendingUp className={styles.trendingIcon}/>
-                       </div>
-                       <p>Most selling products of the month</p>
-                   </div>
-                    <div className={styles.trendingProductsList}>
-                        <div>dasda</div>
-                        <div>dasda</div>
-                        <div>da</div>
-                        <div>da</div>
+                <Container>
+                    <div className={styles.trendingProducts}>
+                        <div className={styles.description}>
+                            <div className={styles.descriptionTitle}>
+                                <h2>Trending Products</h2>
+                                <FiTrendingUp className={styles.trendingIcon}/>
+                            </div>
+                            <p>Most selling products of the month</p>
+                        </div>
+                        <div className={styles.trendingProductsList}>
+                            <ProductCard name={'Tênis Nike 1'} price={'200.50'} tag={'Masculino / Shoes'} img={'/products/tenis1.webp'}/>
+                            <ProductCard name={'Tênis Nike 2'} price={'159.90'} tag={'Masculino / Shoes'} img={'/products/tenis2.webp'}/>
+                            <ProductCard name={'Camisa Nike 1'} price={'180.60'} tag={'Masculino / T-Shirt'} img={'/products/blusa1.webp'}/>
+                            <ProductCard name={'Camisa Nike 2'} price={'115.00'} tag={'Masculino / T-Shirt'} img={'/products/blusa2.webp'}/>
+                        </div>
                     </div>
-                </div>
-            </Container>
+                </Container>
+            </main>
         </>
     );
 };

@@ -17,7 +17,6 @@
   height: 110px;
   width: 100%;
   //border-bottom: 3px solid black;
-  background-color: black;
 }
 
 .topHeader {
@@ -27,6 +26,7 @@
   flex-grow: 1;
   color: white;
   padding-inline: 10px;
+  background-color: black;
   @extend .poppins
 }
 
