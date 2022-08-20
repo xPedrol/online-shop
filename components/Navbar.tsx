@@ -1,11 +1,23 @@
 import styles from '../styles/Navbar.module.scss';
-import {AiOutlineShop} from "react-icons/ai";
+import {AiOutlineMenu} from "react-icons/ai";
 import {BiSearchAlt} from "react-icons/bi";
 import {BsCart3, BsHeart, BsPerson} from "react-icons/bs";
 import Link from "next/link";
-import {FaShopify, FaShoppingBag} from "react-icons/fa";
+import {FaShopify} from "react-icons/fa";
+import {useState} from "react";
 
 const Navbar = () => {
+    const [mobileActive, setMobileActive] = useState('');
+    const toggleMenu = () => {
+        let aux = mobileActive;
+        if (aux.includes('activeMobileMenu')) {
+            aux = '';
+        } else {
+            aux = styles.activeMobileMenu;
+        }
+        console.warn(aux);
+        setMobileActive(aux);
+    };
     return (
         <header className={styles.header}>
             <div className={`${styles.container}`}>
@@ -16,44 +28,47 @@ const Navbar = () => {
                             <h1>Online Shop</h1>
                             <h2>SHOP</h2>
                         </div>
+                        <AiOutlineMenu className={styles.menuIcon} onClick={toggleMenu}/>
                     </div>
                     <div className={styles.endSide}>
-                        <div className={styles.cart}>
-                            <BsCart3 className={styles.endSideIcon}/>
-                            <div className={styles.cartDropdown}>
-                                <div className={styles.cartContent}>
-                                    <div className={styles.cartItem}>
-                                        <img src={'/products/tenis1.webp'} alt={'test'}/>
-                                        <div className={styles.cartItemContent}>
-                                            <h5>Tenis 1</h5>
-                                            <p>2x - R$ 400,00</p>
-                                            <button>Remover</button>
-                                        </div>
+                        <div className={`${styles.endSideActions} ${mobileActive}`}>
+                            <div className={styles.cart}>
+                                <BsCart3 className={styles.endSideIcon}/>
+                                <div className={styles.cartDropdown}>
+                                    <div className={styles.cartContent}>
+                                        <div className={styles.cartItem}>
+                                            <img src={'/products/tenis1.webp'} alt={'test'}/>
+                                            <div className={styles.cartItemContent}>
+                                                <h5>Tenis 1</h5>
+                                                <p>2x - R$ 400,00</p>
+                                                <button>Remover</button>
+                                            </div>
 
-                                    </div>
-                                    <div className={styles.cartItem}>
-                                        <img src={'/products/tenis2.webp'} alt={'test'}/>
-                                        <div className={styles.cartItemContent}>
-                                            <h5>Tenis 2</h5>
-                                            <p>1x - R$ 150,90</p>
-                                            <button>Remover</button>
                                         </div>
+                                        <div className={styles.cartItem}>
+                                            <img src={'/products/tenis2.webp'} alt={'test'}/>
+                                            <div className={styles.cartItemContent}>
+                                                <h5>Tenis 2</h5>
+                                                <p>1x - R$ 150,90</p>
+                                                <button>Remover</button>
+                                            </div>
 
-                                    </div>
-                                    <div className={styles.cartItem}>
-                                        <img src={'/products/blusa1.webp'} alt={'test'}/>
-                                        <div className={styles.cartItemContent}>
-                                            <h5>Tenis 1</h5>
-                                            <p>2x - R$ 450,60</p>
-                                            <button>Remover</button>
                                         </div>
+                                        <div className={styles.cartItem}>
+                                            <img src={'/products/blusa1.webp'} alt={'test'}/>
+                                            <div className={styles.cartItemContent}>
+                                                <h5>Tenis 1</h5>
+                                                <p>2x - R$ 450,60</p>
+                                                <button>Remover</button>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <BsHeart className={styles.endSideIcon}/>
+                            <BsPerson className={styles.endSideIcon}/>
                         </div>
-                        <BsHeart className={styles.endSideIcon}/>
-                        <BsPerson className={styles.endSideIcon}/>
                     </div>
                 </div>
                 <nav className={styles.nav}>
@@ -73,4 +88,5 @@ const Navbar = () => {
         </header>
     );
 };
+
 export default Navbar;

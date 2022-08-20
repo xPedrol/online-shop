@@ -1,6 +1,10 @@
 @use "fonts" as *;
 @use "breakpoins" as *;
 
+.activeMobileMenu {
+  display: flex !important;
+}
+
 .container {
   width: 100%;
   min-height: 110px;
@@ -23,8 +27,10 @@
 
 .topHeader {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  //justify-content: space-between;
+  //align-items: center;
   flex-grow: 1;
   color: white;
   padding-inline: 10px;
@@ -114,77 +120,97 @@
 }
 
 .startSide {
+  flex-grow: 1;
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
+
+  .menuIcon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .menuIcon:hover {
+    opacity: 0.5;
+  }
 }
 
 .endSide {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 
-  > * {
-    cursor: pointer;
-    margin-right: 25px;
-    transition: 100ms;
-  }
+  .endSideActions {
+    display: none;
+    padding: 15px;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 
-  .endSideIcon:hover {
-    transform: scale(1.5);
-  }
+    > * {
+      cursor: pointer;
+      margin-right: 25px;
+      transition: 100ms;
+    }
 
-  .cart {
-    position: relative;
-    .cartDropdown {
-      left: calc(100% - 200px);
-      position: absolute;
-      background-color: #181818;
-      min-width: 300px;
-      max-width: 400px;
-      z-index: 1;
-      border-radius: 10px;
-      display: none;
-      .cartContent {
-        display: flex;
-        flex-direction: column;
+    .endSideIcon:hover {
+      transform: scale(1.5);
+    }
 
-        .cartItem {
-          padding: 10px;
+    .cart {
+      position: relative;
+
+      .cartDropdown {
+        left: calc(100% - 200px);
+        position: absolute;
+        background-color: #181818;
+        min-width: 300px;
+        max-width: 400px;
+        z-index: 1;
+        border-radius: 10px;
+        display: none;
+
+        .cartContent {
           display: flex;
-          align-items: center;
-          p{
-            font-size: 0.8rem;
-          }
+          flex-direction: column;
 
-          img {
-            width: 70px;
-            border-radius: 10px;
-          }
+          .cartItem {
+            padding: 10px;
+            display: flex;
+            align-items: center;
 
-          .cartItemContent {
-            flex: 1;
-            margin-left: 10px;
-            @extend .robotoCondensed;
+            p {
+              font-size: 0.8rem;
+            }
 
-            button {
-              margin-top: 7px;
-              cursor: pointer;
-              border: none;
-              background-color: #f1f0f0;
-              border-radius: 7px;
-              padding: 4px;
+            img {
+              width: 70px;
+              border-radius: 10px;
+            }
+
+            .cartItemContent {
+              flex: 1;
+              margin-left: 10px;
               @extend .robotoCondensed;
+
+              button {
+                margin-top: 7px;
+                cursor: pointer;
+                border: none;
+                background-color: #f1f0f0;
+                border-radius: 7px;
+                padding: 4px;
+                @extend .robotoCondensed;
+              }
             }
           }
         }
       }
     }
-  }
 
-  .cart:hover {
-    .cartDropdown {
-      display: block;
+    .cart:hover {
+      .cartDropdown {
+        display: block;
+      }
     }
   }
 }
@@ -193,15 +219,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  .logoIcon{
+
+  .logoIcon {
     display: block;
     font-size: 40px;
   }
-  h2{
+
+  h2 {
     display: block;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+
   h1 {
     //margin-left: 20px;
     text-transform: uppercase;
@@ -211,15 +240,35 @@
   }
 }
 
+@include min($bMd) {
+  .topHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .startSide {
+    .menuIcon {
+      display: none;
+    }
+  }
+  .endSide {
+    .endSideActions {
+      display: flex;
+    }
+  }
+}
+
 @include min($bSm) {
   .logo {
     h2 {
       display: none;
     }
+
     h1 {
       display: block;
     }
-    .logoIcon{
+
+    .logoIcon {
       display: none;
     }
   }
