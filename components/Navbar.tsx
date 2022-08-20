@@ -2,6 +2,7 @@ import styles from '../styles/Navbar.module.scss';
 import {AiOutlineShop} from "react-icons/ai";
 import {BiSearchAlt} from "react-icons/bi";
 import {BsCart3, BsHeart, BsPerson} from "react-icons/bs";
+import Link from "next/link";
 
 const Navbar = () => {
     return (
@@ -22,7 +23,7 @@ const Navbar = () => {
                 </div>
                 <nav className={styles.nav}>
                     <ul>
-                        <li><a>Home</a></li>
+                        <li><Link href={'/'} passHref={true}><a>Home</a></Link></li>
                         <li><a>Produtos</a></li>
                         <li><a>Contato</a></li>
                     </ul>

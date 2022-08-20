@@ -61,6 +61,8 @@
     text-transform: uppercase;
     font-weight: 700;
     font-size: 15px;
+    text-decoration: none;
+    color: unset;
     @extend .robotoCondensed;
   }
 
