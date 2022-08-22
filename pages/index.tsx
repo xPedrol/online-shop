@@ -6,8 +6,27 @@ import Container from "../components/Container";
 import {FiTrendingUp} from "react-icons/fi";
 import ProductCard from "../components/ProductCard";
 import {MdRecommend} from "react-icons/md";
+import {useStore} from "../contexts/Store";
+import {useEffect, useState} from "react";
+import {TProduct} from "../models/Product";
 
 const Home: NextPage = () => {
+    const store = useStore();
+    const [trendingProducts, setTrendingProducts] = useState([]);
+    const [recommendedProducts, setRecommendedProducts] = useState([]);
+    useEffect(() => {
+        const auxTrendingProducts: TProduct | any = [];
+        const auxRecommendedProducts: TProduct | any = [];
+        for (let i = 0; i < store.products.length; i++) {
+            if (i < 4) {
+                auxTrendingProducts.push(store.products[i]);
+            } else {
+                auxRecommendedProducts.push(store.products[i]);
+            }
+        }
+        setTrendingProducts(auxTrendingProducts);
+        setRecommendedProducts(auxRecommendedProducts);
+    }, [store.products]);
     return (
         <>
             <Head>
@@ -64,10 +83,9 @@ const Home: NextPage = () => {
                             <p>Most selling products of the month</p>
                         </div>
                         <div className={styles.trendingProductsList}>
-                            <ProductCard url={`/products/tenis1`} name={'Tênis Nike 1'} price={'200.50'} tag={'Masculino / Shoes'} img={'/products/tenis1.webp'}/>
-                            <ProductCard url={`/products/tenis2`} name={'Tênis Nike 2'} price={'159.90'} tag={'Masculino / Shoes'} img={'/products/tenis2.webp'}/>
-                            <ProductCard url={`/products/blusa1`} name={'Camisa Nike 1'} price={'180.60'} tag={'Masculino / Clothes'} img={'/products/blusa1.webp'}/>
-                            <ProductCard url={`/products/blusa2`} name={'Camisa Nike 2'} price={'115.00'} tag={'Masculino / Clothes'} img={'/products/blusa2.webp'}/>
+                            {trendingProducts.map((product: TProduct) =>
+                                <ProductCard key={product.id} product={product}/>
+                            )}
                         </div>
                     </div>
                     <div className={styles.collections}>
@@ -102,10 +120,9 @@ const Home: NextPage = () => {
                             <p>OUR BEST PRODUCTS RECOMMENDED FOR YOU</p>
                         </div>
                         <div className={styles.trendingProductsList}>
-                            <ProductCard url={`/products/watch1`} name={'Relógio 1'} price={'200.50'} tag={'Masculino / Watch'} img={'/products/watch1.jpg'}/>
-                            <ProductCard url={`/products/watch3`} name={'Relógio 2'} price={'159.90'} tag={'Masculino / Watch'} img={'/products/watch3.jpg'}/>
-                            <ProductCard url={`/products/watch2`} name={'Relógio 3'} price={'180.60'} tag={'Masculino / Watch'} img={'/products/watch2.webp'}/>
-                            <ProductCard url={`/products/jacket1`} name={'Camisa Nike 2'} price={'115.00'} tag={'Masculino / Clothes'} img={'/products/jacket1.jpg'}/>
+                            {recommendedProducts.map((product: TProduct) =>
+                                <ProductCard key={product.id} product={product}/>
+                            )}
                         </div>
                     </div>
                 </Container>
