@@ -1,8 +1,10 @@
 import {createContext, ReactNode, useContext, useEffect, useState} from "react";
 import styles from "../styles/Sidebar.module.scss";
+
 type TSidebarContext = {
     isSidebarOpen: boolean;
     toggleSidebar: () => void;
+    setIsSidebarOpen: (isSidebarOpen: boolean) => void;
 }
 const sidebarContext = createContext({} as TSidebarContext);
 type TSidebarProviderProps = {
@@ -13,8 +15,9 @@ export const SidebarProvider = ({children}: TSidebarProviderProps) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
-    }
+    };
     useEffect(() => {
+        console.warn('sidebar');
         const sidebar = document.querySelector(`.${styles.sidebar}`);
         const body = document.querySelector('body');
         if (isSidebarOpen) {
@@ -25,7 +28,7 @@ export const SidebarProvider = ({children}: TSidebarProviderProps) => {
             body?.classList.remove(styles.overflowHidden);
         }
     }, [isSidebarOpen]);
-    return <sidebarContext.Provider value={{isSidebarOpen, toggleSidebar}}>
+    return <sidebarContext.Provider value={{isSidebarOpen, setIsSidebarOpen, toggleSidebar}}>
         {children}
     </sidebarContext.Provider>;
 };

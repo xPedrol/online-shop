@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Navbar from "../../components/Navbar";
 import {useRouter} from "next/router";
 import Container from "../../components/Container";
 import stylesB from "../../styles/Breadcrumb.module.scss";
@@ -13,10 +11,12 @@ import {useStore} from "../../contexts/Store";
 import {CartProduct} from "../../models/CartProduct";
 import {Cart} from "../../models/Cart";
 import {Wishlist} from "../../models/Wishlist";
+import Layout from "../../components/Layout";
+import SetTitle from "../../components/SetTitle";
 
 const ProductPage = () => {
     const router = useRouter();
-    const {products:storeProducts,cart,setCart,wishlist,setWishlist} = useStore();
+    const {products: storeProducts, cart, setCart, wishlist, setWishlist} = useStore();
     const {id} = router.query;
     const [product, setProduct] = useState<TProduct>();
     const [recommendProducts, setRecommendProducts] = useState<TProduct[] | any[]>([]);
@@ -37,7 +37,7 @@ const ProductPage = () => {
             wishlist.addProduct(product);
             setWishlist(new Wishlist(wishlist));
         }
-    }
+    };
 
     useEffect(() => {
         const recommendProducts = products.filter((product, i) => i < 4);
@@ -47,11 +47,8 @@ const ProductPage = () => {
     }, [id]);
     return (
         <>
-            <Head>
-                <title>Home</title>
-            </Head>
-            <Navbar/>
-            <main className={styles.main}>
+            <SetTitle title={product?.name}/>
+            <div className={styles.main}>
                 <Container>
                     <div className={stylesB.breadcrumb}>
                         <div className={stylesB.breadcrumbItem}>
@@ -96,7 +93,9 @@ const ProductPage = () => {
                                         </button>
                                     </div>
                                     <div className={styles.productInfoWishlist}>
-                                        <button onClick={addToWishlist}><BsHeart className={styles.icon20px}/> Add to Wishlist</button>
+                                        <button onClick={addToWishlist}><BsHeart className={styles.icon20px}/> Add to
+                                            Wishlist
+                                        </button>
                                     </div>
                                     <div className={styles.productInfoWishlist}>
                                         <button><BsShare className={styles.icon20px}/> Share this product</button>
@@ -127,7 +126,7 @@ const ProductPage = () => {
                         </div>
                     </div>
                 </Container>
-            </main>
+            </div>
         </>
     );
 };

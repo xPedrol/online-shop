@@ -25,14 +25,14 @@ const Navbar = () => {
                         <AiOutlineMenu className={styles.menuIcon} onClick={toggleMenu}/>
                     </div>
                     <div className={styles.endSide}>
-                            <ActionIcons parentDivClass={styles.endSideActions}/>
+                        <ActionIcons parentDivClass={styles.endSideActions}/>
                     </div>
                 </div>
                 <nav className={styles.nav}>
                     <ul>
                         <li><Link href={'/'} passHref={true}><a>Home</a></Link></li>
-                        <li><a>Products</a></li>
-                        <li><a>Contact</a></li>
+                        <li><Link href={'/products'} passHref={true}><a>Products</a></Link></li>
+                        <li><Link href={'#'} passHref={true}><a>Contact</a></Link></li>
                     </ul>
                     <div className={styles.search}>
                         <input placeholder={'Pesquisar...'}/>
