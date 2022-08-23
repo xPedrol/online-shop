@@ -2,11 +2,9 @@ import styles from '../styles/Sidebar.module.scss';
 import {VscChromeClose} from "react-icons/vsc";
 import {useSidebarContext} from "../contexts/SidebarContext";
 import Link from "next/link";
-import {BiHomeAlt} from "react-icons/bi";
 import {HiOutlineHome} from "react-icons/hi";
 import {IoShirtOutline} from "react-icons/io5";
-import {MdPermContactCalendar} from "react-icons/md";
-import {RiContactsBook2Line, RiContactsLine} from "react-icons/ri";
+import {RiContactsLine} from "react-icons/ri";
 import ActionIcons from "./ActionIcons";
 
 const Sidebar = () => {

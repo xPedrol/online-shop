@@ -30,13 +30,12 @@ const Home: NextPage = () => {
     }, [store.products]);
     return (
         <>
-            <Sidebar/>
             <div className={styles.firstDiv}>
                 <Head>
                     <title>Home</title>
                 </Head>
                 <Navbar/>
-
+                <Sidebar/>
                 <main className={styles.main}>
                     <div className={styles.promo}>
                         {/*<div className={styles.sliders}>*/}

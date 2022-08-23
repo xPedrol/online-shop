@@ -16,11 +16,13 @@ export const SidebarProvider = ({children}: TSidebarProviderProps) => {
     }
     useEffect(() => {
         const sidebar = document.querySelector(`.${styles.sidebar}`);
-        console.warn(sidebar);
+        const body = document.querySelector('body');
         if (isSidebarOpen) {
+            body?.classList.add(styles.overflowHidden);
             sidebar?.classList.add(styles.opened);
         } else {
             sidebar?.classList.remove(styles.opened);
+            body?.classList.remove(styles.overflowHidden);
         }
     }, [isSidebarOpen]);
     return <sidebarContext.Provider value={{isSidebarOpen, toggleSidebar}}>
