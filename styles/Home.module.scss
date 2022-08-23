@@ -1,6 +1,9 @@
 @use "fonts" as *;
 @use "breakpoins" as *;
-
+.firstDiv{
+  //filter: blur(5px);
+  z-index: 1;
+}
 .imgContentGrid {
   grid-column: 2/6;
   grid-row: 8/9;
