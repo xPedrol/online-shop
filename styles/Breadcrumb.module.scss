@@ -19,7 +19,7 @@
 .breadcrumbItem:not(:last-child):hover{
     text-decoration: underline;
     a{
-      opacity: 0.5;
+      color: #f0e68c;
     }
 }
 .breadcrumbItem + .breadcrumbItem::before {

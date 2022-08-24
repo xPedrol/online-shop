@@ -11,7 +11,6 @@ import {useStore} from "../../contexts/Store";
 import {CartProduct} from "../../models/CartProduct";
 import {Cart} from "../../models/Cart";
 import {Wishlist} from "../../models/Wishlist";
-import Layout from "../../components/Layout";
 import SetTitle from "../../components/SetTitle";
 
 const ProductPage = () => {
@@ -26,7 +25,6 @@ const ProductPage = () => {
     const addToCart = () => {
         if (product) {
             const cartProduct = new CartProduct(product, cartInput);
-            // useState é atualizado quando o endereço de memória é alterado, caso um campo de um obj seja alterado, o useState nn é chamado
             const auxCart = new Cart(cart);
             auxCart.addToCart(cartProduct);
             setCart(auxCart);

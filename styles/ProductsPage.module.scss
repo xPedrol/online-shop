@@ -1,0 +1,112 @@
+@use '../styles/breakpoins' as *;
+@use '../styles/fonts' as *;
+
+.main {
+  padding-top: 50px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.filters {
+  grid-column: 1/13;
+  min-height: 100px;
+}
+
+.productsList {
+  grid-column: 1/13;
+  min-height: 100px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 50px;
+}
+
+.categories, .priceRange {
+
+  h3 {
+    text-transform: uppercase;
+    @extend .poppins;
+    font-weight: 700;
+    border-bottom: 1px solid #6c757d;
+  }
+}
+
+.priceRange {
+  margin-top: 20px;
+}
+
+.categoriesList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: initial;
+  list-style-position: inside;
+
+  li {
+    @extend .robotoCondensed;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: #f0e68c;
+  }
+}
+
+.priceRangeInput {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  input {
+    flex-grow: 1;
+    margin-bottom: 5px;
+  }
+}
+
+.prices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @extend .robotoCondensed;
+}
+
+@include min($bSm) {
+  .productsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include min($bMd) {
+  .priceRangeInput {
+    max-width: 60%;
+    margin-inline: auto;
+  }
+}
+
+@include min($bLg) {
+  .filters {
+    grid-column: 1/3;
+  }
+  .productsList {
+    grid-column: 3/13;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .priceRangeInput {
+    max-width: 100%;
+    margin-inline: auto;
+  }
+}
+
+@include min($bXl) {
+  .productsList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
