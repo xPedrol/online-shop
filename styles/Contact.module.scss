@@ -1,5 +1,6 @@
 @use "breakpoins" as *;
 @use "fonts" as *;
+
 .main {
   padding-top: 50px;
 }
@@ -12,9 +13,11 @@
   gap: 10px;
   padding: 10px;
   margin-top: 70px;
-  label{
+
+  label {
     @extend .robotoCondensed;
   }
+
   input {
     width: 100%;
     padding: 15px;
@@ -23,7 +26,8 @@
     background-color: #f1f0f0;
     @extend .robotoCondensed;
   }
-  textarea{
+
+  textarea {
     width: 100%;
     padding: 15px;
     margin-right: 1px;
@@ -32,7 +36,8 @@
     max-width: 100%;
     @extend .robotoCondensed;
   }
-  button{
+
+  button {
     background-color: #f0e68c;
     @extend .robotoCondensed;
     padding: 10px;
@@ -56,11 +61,39 @@
 .col6 {
 }
 
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
 
-@include min($bMd){
-  .contact{
+  h2 {
+    @extend .poppins;
+  }
+
+  p {
+    @extend .poppins;
+    color: #f0e68c;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f0e68c;
+  }
+}
+
+.descriptionTitle {
+  display: flex;
+  align-items: center;
+}
+
+.trendingIcon {
+  margin-left: 10px;
+  font-size: 25px;
+}
+
+@include min($bMd) {
+  .contact {
     padding: 0;
-    width:768px;
+    width: 768px;
     grid-template-columns: repeat(2, 1fr);
   }
   .col12 {
