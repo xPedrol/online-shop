@@ -1,0 +1,69 @@
+@use "breakpoins" as *;
+@use "fonts" as *;
+.main {
+  padding-top: 50px;
+}
+
+.contact {
+  display: grid;
+  width: auto;
+  margin-inline: auto;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  padding: 10px;
+  margin-top: 70px;
+  label{
+    @extend .robotoCondensed;
+  }
+  input {
+    width: 100%;
+    padding: 15px;
+    margin-right: 1px;
+    border: none;
+    background-color: #f1f0f0;
+    @extend .robotoCondensed;
+  }
+  textarea{
+    width: 100%;
+    padding: 15px;
+    margin-right: 1px;
+    border: none;
+    background-color: #f1f0f0;
+    max-width: 100%;
+    @extend .robotoCondensed;
+  }
+  button{
+    background-color: #f0e68c;
+    @extend .robotoCondensed;
+    padding: 10px;
+    border: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+.col6, .col12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  //border: 1px solid black;
+
+  > * {
+    flex-grow: 1;
+  }
+}
+
+.col6 {
+}
+
+
+@include min($bMd){
+  .contact{
+    padding: 0;
+    width:768px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .col12 {
+    grid-column: 1/3;
+  }
+}

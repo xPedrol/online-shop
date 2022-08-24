@@ -32,7 +32,7 @@ const Navbar = () => {
                     <ul>
                         <li><Link href={'/'} passHref={true}><a>Home</a></Link></li>
                         <li><Link href={'/products'} passHref={true}><a>Products</a></Link></li>
-                        <li><Link href={'#'} passHref={true}><a>Contact</a></Link></li>
+                        <li><Link href={'/contact'} passHref={true}><a>Contact</a></Link></li>
                     </ul>
                     <div className={styles.search}>
                         <input placeholder={'Pesquisar...'}/>
