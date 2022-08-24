@@ -66,8 +66,23 @@
   align-items: stretch;
 
   input {
+    -webkit-appearance: none;
+    height: 20px;
+    background: #e9ecef;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
     flex-grow: 1;
     margin-bottom: 5px;
+  }
+  input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #f0e68c;
+    cursor: pointer;
   }
 }
 

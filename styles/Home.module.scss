@@ -39,46 +39,111 @@
 }
 
 .promo {
+  position: relative;
+  height: 89vh;
+  width: 100%;
+  min-height: 400px;
   background-color: #fff;
   margin: 0 auto;
-}
-
-.sliders {
   display: flex;
-  justify-content: flex-start;
-  //width: 800px;
-  width: 100%;
-  min-width: 300px;
-  overflow: auto;
+  align-items: center;
+  background-image: url("../public/slide3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
+.promoContentText {
+  margin-inline: 20px;
+  grid-column: 1/13;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px 20px 20px;
+  border-radius: 7px;
+}
 
-  .slider {
-    //grid-column: 1/12;
-    //grid-row: 1/12;
-    margin-right: 5px;
-    min-width: 400px;
-    display: grid;
-    justify-content: stretch;
-    height: 100%;
-
-    img {
-      grid-column: 1/12;
-      grid-row: 1/12;
-      min-height: 300px;
-      max-width: 800px;
-      width: 100%;
-      height: 100%;
-    }
-
-    .sliderContent {
-      @extend .imgContentGrid;
-    }
+@keyframes promoContentOpacity {
+  0% {
+    opacity: 0;
   }
-
-  .slider:last-child {
-    margin-right: 0;
+  100% {
+   opacity: 1;
   }
 }
+
+.promoContent {
+  opacity: 1;
+  width: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  animation-name: promoContentOpacity;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+
+  h4 {
+    @extend .poppins;
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #f0e68c;
+  }
+
+  p {
+    @extend .robotoCondensed;
+    font-size: 22px;
+    color: #f1f0f0;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 10px 10px 10px;
+    background-color: #f0e68c;
+    border: none;
+    @extend .robotoCondensed;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 17px;
+    border-radius: 7px;
+  }
+}
+
+//.sliders {
+//  display: flex;
+//  justify-content: flex-start;
+//  //width: 800px;
+//  width: 100%;
+//  min-width: 300px;
+//  overflow: auto;
+//
+//
+//  .slider {
+//    //grid-column: 1/12;
+//    //grid-row: 1/12;
+//    margin-right: 5px;
+//    min-width: 400px;
+//    display: grid;
+//    justify-content: stretch;
+//    height: 100%;
+//
+//    img {
+//      grid-column: 1/12;
+//      grid-row: 1/12;
+//      min-height: 300px;
+//      max-width: 800px;
+//      width: 100%;
+//      height: 100%;
+//    }
+//
+//    .sliderContent {
+//      @extend .imgContentGrid;
+//    }
+//  }
+//
+//  .slider:last-child {
+//    margin-right: 0;
+//  }
+//}
 
 .trendingProducts {
   padding-top: 50px;
@@ -199,7 +264,9 @@
 }
 
 @include min($bMd) {
-
+  .promoContent {
+    width: 1200px;
+  }
   .sliders {
     .slider {
       min-width: 500px;
@@ -210,6 +277,7 @@
       border-radius: 0 0 20px 0;
       grid-row: 7/13;
       grid-column: 7/13;
+
       .collectionContent {
         border-radius: 0 0 20px 0;
       }
@@ -219,6 +287,7 @@
       border-radius: 20px 0 0 20px;
       grid-row: 1/13;
       grid-column: 1/7;
+
       .collectionContent {
         border-radius: 0 0 0 20px;
       }
@@ -246,6 +315,10 @@
 }
 
 @include min($bXl) {
+  .promoContentText {
+    grid-column: 1/8;
+    margin-inline: 0;
+  }
   .trendingProducts {
     .trendingProductsList {
       grid-template-columns: repeat(4, 1fr);

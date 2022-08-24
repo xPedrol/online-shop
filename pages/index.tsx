@@ -30,43 +30,13 @@ const Home: NextPage = () => {
         <>
             <SetTitle title={'Home'}/>
             <div className={styles.promo}>
-                {/*<div className={styles.sliders}>*/}
-                {/*    <div className={styles.slider}>*/}
-                {/*        <img src={'/slide1.jpg'} alt={'slider-1'}/>*/}
-                {/*        <div className={styles.sliderContent}>*/}
-                {/*            <h3>Sales 20% OFF</h3>*/}
-                {/*            <h1>Women&apos;s Fashion</h1>*/}
-                {/*            <button>Shop now</button>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*    <div className={styles.slider}>*/}
-                {/*        <img src={'/slide3.jpg'} alt={'slider-3'}/>*/}
-                {/*        <div className={styles.sliderContent}>*/}
-                {/*            <h3>Sales from 69 dollars</h3>*/}
-                {/*            <h1>mega promotion</h1>*/}
-                {/*            <button>Shop now</button>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*    <div className={styles.slider}>*/}
-                {/*        <img src={'/slide2.jpg'} alt={'slider-2'}/>*/}
-                {/*        <div className={styles.sliderContent}>*/}
-                {/*            <h3>Sales 10% OFF</h3>*/}
-                {/*            <h1>Men&apos;s Day</h1>*/}
-                {/*            <button>Shop now</button>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*    /!*<div className={styles.arrowRight}>*!/*/}
-                {/*    /!*    <IoIosArrowForward/>*!/*/}
-                {/*    /!*</div>*!/*/}
-                {/*    /!*<div className={styles.arrowLeft}>*!/*/}
-                {/*    /!*    <IoIosArrowBack/>*!/*/}
-                {/*    /!*</div>*!/*/}
-                {/*    /!*<div className={styles.sliderCount}>*!/*/}
-                {/*    /!*    <div className={styles.sliderOutlinePoint}></div>*!/*/}
-                {/*    /!*    <div className={styles.sliderOutlinePoint}></div>*!/*/}
-                {/*    /!*    <div className={styles.sliderOutlinePoint}></div>*!/*/}
-                {/*    /!*</div>*!/*/}
-                {/*</div>*/}
+                <div className={styles.promoContent}>
+                    <div className={styles.promoContentText}>
+                        <h4>Aproveite a super oferta</h4>
+                        <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um </p>
+                        <button>Ver promoções</button>
+                    </div>
+                </div>
             </div>
             <Container>
                 <div className={styles.trendingProducts}>
