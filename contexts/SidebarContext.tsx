@@ -17,7 +17,6 @@ export const SidebarProvider = ({children}: TSidebarProviderProps) => {
         setIsSidebarOpen(!isSidebarOpen);
     };
     useEffect(() => {
-        console.warn('sidebar');
         const sidebar = document.querySelector(`.${styles.sidebar}`);
         const body = document.querySelector('body');
         if (isSidebarOpen) {

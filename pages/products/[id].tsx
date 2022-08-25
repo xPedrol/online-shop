@@ -12,8 +12,10 @@ import {CartProduct} from "../../models/CartProduct";
 import {Cart} from "../../models/Cart";
 import {Wishlist} from "../../models/Wishlist";
 import SetTitle from "../../components/SetTitle";
+import {useToastContext} from "../../contexts/ToastProvider";
 
 const ProductPage = () => {
+    const {setActive, setToastMsg} = useToastContext();
     const router = useRouter();
     const {products: storeProducts, cart, setCart, wishlist, setWishlist} = useStore();
     const {id} = router.query;
@@ -28,12 +30,22 @@ const ProductPage = () => {
             const auxCart = new Cart(cart);
             auxCart.addToCart(cartProduct);
             setCart(auxCart);
+            setToastMsg({
+                title: 'Added to cart',
+                msg: `${product.name} added to cart`,
+            });
+            setActive(true);
         }
     };
     const addToWishlist = () => {
         if (product) {
             wishlist.addProduct(product);
             setWishlist(new Wishlist(wishlist));
+            setToastMsg({
+                title: 'Added to wishlist',
+                msg: `${product.name} added to wishlist`,
+            });
+            setActive(true);
         }
     };
 

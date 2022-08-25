@@ -1,0 +1,58 @@
+@use "fonts" as *;
+
+$toast-max-width:350px;
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  //right: calc(50% - $toast-max-width/2);
+  z-index: 998 !important;
+  background-color: khaki;
+  color: #181818;
+  opacity: 0;
+  display: block;
+  scale: 0.5;
+  max-width: $toast-max-width;
+  border-radius: 7px;
+  max-height: 0;
+  transition: opacity 300ms, scale 300ms, max-height 1s;
+  overflow: hidden;
+  @extend .robotoCondensed;
+}
+.toastContent{
+  margin: 10px;
+}
+.toast.active{
+  opacity: 1;
+  max-height: 500px;
+  scale: 1;
+  transition:  max-height 1s;
+}
+.toastHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toastHeader{
+  h4{
+    flex-grow: 1;
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+}
+.toastMsgClose{
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    border: none;
+    background-color: transparent;
+  }
+}
+.toastMsgCloseIcon{
+  font-size: 1.5rem;
+}

@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import styles from "../styles/Layout.module.scss";
 import {useSidebarContext} from "../contexts/SidebarContext";
+import Toast from "./Toast";
 
 type TLayoutProps = {
     children: ReactNode;
@@ -15,6 +16,7 @@ const Layout = ({children, title}: TLayoutProps) => {
             <Navbar/>
             <Sidebar/>
             <main className={styles.main}>{children}</main>
+            <Toast/>
         </>
     );
 };
