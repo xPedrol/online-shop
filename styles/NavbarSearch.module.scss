@@ -51,7 +51,18 @@
   transition: max-height 0.3s ease-in-out;
   border-radius: 7px;
 }
-
+.emptySearch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  text-transform: uppercase;
+  @extend .robotoCondensed;
+  .emptySearchIcon{
+    font-size: 25px;
+    color: #f1f0f0;
+  }
+}
 .searchDropdown.active{
   max-height: 500px;
 }

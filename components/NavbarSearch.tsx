@@ -3,35 +3,43 @@ import {BiSearchAlt} from "react-icons/bi";
 import {useState} from "react";
 import {constProducts} from "../contants/products";
 import Link from "next/link";
+import {TbHourglassEmpty} from "react-icons/tb";
 
 const NavbarSearch = () => {
     const [products, setProducts] = useState(constProducts);
-    const search = (searchTerm: string) => {
+    const search = (searchTerm: string | null) => {
         if (!searchTerm || searchTerm === '') {
             setProducts(constProducts);
         } else {
             setProducts(products.filter((product) => {
                 const productName = product.name.toLowerCase();
-                searchTerm = searchTerm.trim().toLowerCase();
-                return productName.includes(searchTerm) || searchTerm.includes(productName);
+                if (searchTerm) {
+                    searchTerm = searchTerm.trim().toLowerCase();
+                    return productName.includes(searchTerm) || searchTerm.includes(productName);
+                }
             }));
         }
     };
     const toggleDropdown = () => {
         const activeClass = `${styles.active}`;
+        const searchInput = document.querySelector(`#searchInput`);
         const searchDropdown = document.querySelector(`.${styles.searchDropdown}`);
         if (searchDropdown) {
             if (searchDropdown.classList.contains(activeClass)) {
-                console.warn(searchDropdown);
                 searchDropdown.classList.remove(activeClass);
+                (searchInput as any)['value'] = null;
             } else {
                 searchDropdown.classList.add(activeClass);
+                if (!(searchInput as any)['value'] || (searchInput as any)['value'] === '') {
+                    search(null);
+                }
             }
         }
     };
     return (
         <div className={styles.search}>
-            <input placeholder={'Pesquisar...'} onChange={(e) => search(e.target.value)} onFocus={toggleDropdown}
+            <input id={'searchInput'} placeholder={'Pesquisar...'} onChange={(e) => search(e.target.value)}
+                   onFocus={toggleDropdown}
                    onBlur={toggleDropdown}/>
             <button>
                 <BiSearchAlt className={styles.searchIcon}/>
@@ -39,18 +47,22 @@ const NavbarSearch = () => {
             <div className={styles.searchDropdown}>
                 <div className={styles.searchDropdownContent}>
                     {
-                        products.map((product) =>
-                            <Link key={product.id} href={`/products/${product.id}`} passHref={true}>
-                                <div className={styles.searchDropdownItem}>
-                                    <img src={product.image} alt={product.name}/>
-                                    <div className={styles.cartItemContent}>
-                                        <h5>{product.name}</h5>
-                                        <p>R${product.price.toFixed(2)}</p>
-                                        <button>Show</button>
+                        products && products.length > 0 ? products.map((product) =>
+                                <Link key={product.id} href={`/products/${product.id}`} passHref={true}>
+                                    <div className={styles.searchDropdownItem}>
+                                        <img src={product.image} alt={product.name}/>
+                                        <div className={styles.cartItemContent}>
+                                            <h5>{product.name}</h5>
+                                            <p>R${product.price.toFixed(2)}</p>
+                                            <button>Show</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </Link>
-                        )
+                                </Link>
+                            ) :
+                            <div className={styles.emptySearch}>
+                                <TbHourglassEmpty className={styles.emptySearchIcon}/>
+                                <p>Empty Search</p>
+                            </div>
                     }
                 </div>
             </div>

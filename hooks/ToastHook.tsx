@@ -14,7 +14,6 @@ const useToast = (): TUseToast => {
     const [toastMsg, setToastMsg] = useState<TMsg | undefined>();
     const [active, setActive] = useState(false);
     useEffect(() => {
-        console.warn('useToast', toastMsg);
         const toastElement = document.querySelector(`.${styles.toast}`);
         if (active) {
             toastElement?.classList.add(styles.active);
