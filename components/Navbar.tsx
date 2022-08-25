@@ -5,6 +5,7 @@ import Link from "next/link";
 import {FaShopify} from "react-icons/fa";
 import ActionIcons from "./ActionIcons";
 import {useSidebarContext} from "../contexts/SidebarContext";
+import NavbarSearch from "./NavbarSearch";
 
 const Navbar = () => {
     const useSidebar = useSidebarContext();
@@ -34,12 +35,7 @@ const Navbar = () => {
                         <li><Link href={'/products'} passHref={true}><a>Products</a></Link></li>
                         <li><Link href={'/contact'} passHref={true}><a>Contact</a></Link></li>
                     </ul>
-                    <div className={styles.search}>
-                        <input placeholder={'Pesquisar...'}/>
-                        <button>
-                            <BiSearchAlt className={styles.searchIcon}/>
-                        </button>
-                    </div>
+                   <NavbarSearch/>
                 </nav>
             </div>
         </header>

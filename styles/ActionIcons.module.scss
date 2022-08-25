@@ -16,12 +16,12 @@
     position: relative;
 
     .cartDropdown {
+      z-index: 998!important;
       left: calc(100% - 100px);
       position: absolute;
       background-color: #181818;
       min-width: 300px;
       max-width: 400px;
-      z-index: 1;
       border-radius: 10px;
       display: none;
 
@@ -83,7 +83,7 @@
             letter-spacing: 1px;
           }
         }
-        .cartItem {
+        .searchDropdownItem {
           padding: 10px;
           display: flex;
           align-items: center;
@@ -114,7 +114,7 @@
             }
           }
         }
-        .cartItem:hover {
+        .searchDropdownItem:hover {
           background-color: #f0e68c;
           color: #181818 !important;
           button{

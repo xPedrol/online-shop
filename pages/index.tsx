@@ -8,7 +8,6 @@ import {useStore} from "../contexts/Store";
 import {useEffect, useState} from "react";
 import {TProduct} from "../models/Product";
 import SetTitle from "../components/SetTitle";
-import {useToastContext} from "../contexts/ToastProvider";
 
 const Home: NextPage = () => {
     const store = useStore();
@@ -33,7 +32,7 @@ const Home: NextPage = () => {
             <div className={styles.promo}>
                 <div className={styles.promoContent}>
                     <div className={styles.promoContentText}>
-                        <h4>Aproveite a super oferta</h4>
+                        <h4>ENJOY THE SUPER OFFER</h4>
                         <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e
                             vem sendo utilizado desde o século XVI, quando um </p>
                         <button>Ver promoções</button>
