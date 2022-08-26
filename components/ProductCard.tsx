@@ -3,6 +3,7 @@ import Link from "next/link";
 import {TProduct} from "../models/Product";
 import {useStore} from "../contexts/StoreContext";
 import {useToastContext} from "../contexts/ToastContext";
+import Image from "next/image";
 
 type Props = {
     product: TProduct;
@@ -26,7 +27,7 @@ const ProductCard = ({product}: Props) => {
         {img &&
 
             <div className={styles.cardImageHeader}>
-                <ProductLink><img src={img} alt={name}/></ProductLink>
+                <ProductLink><Image layout="fixed" width={250} height={250} src={img} alt={name} className={styles.image}/></ProductLink>
             </div>
         }
         <div className={styles.cardBody}>
