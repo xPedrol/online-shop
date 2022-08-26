@@ -38,7 +38,7 @@ export const constProducts: TProduct[] = [
         name: "Jacket 1",
         price: 300,
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, nisi vel consectetur interdum, nunc nisi aliquam nisi, euismod aliquam nisi nisi vel consectetur interdum.",
-        image: `${baseUrl}/jacket1.jpg`,
+        image: `${baseUrl}/jacket1.webp`,
         tag: "Jacket"
     },
     {
@@ -46,7 +46,7 @@ export const constProducts: TProduct[] = [
         name: "Watch 1",
         price: 300,
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, nisi vel consectetur interdum, nunc nisi aliquam nisi, euismod aliquam nisi nisi vel consectetur interdum.",
-        image: `${baseUrl}/watch1.jpg`,
+        image: `${baseUrl}/watch1.webp`,
         tag: "Watch"
     },
     {
@@ -62,7 +62,7 @@ export const constProducts: TProduct[] = [
         name: "Watch 3",
         price: 300,
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, nisi vel consectetur interdum, nunc nisi aliquam nisi, euismod aliquam nisi nisi vel consectetur interdum.",
-        image: `${baseUrl}/watch3.jpg`,
+        image: `${baseUrl}/watch3.webp`,
         tag: "Watch"
     }
 ];

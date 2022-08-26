@@ -48,7 +48,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  background-image: url("../public/slide3.jpg");
+  background-image: url("../public/slide3.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -214,7 +214,7 @@
   }
 
   .womenCollection {
-    background-image: url("../public/womenCollection.jpg");
+    background-image: url("../public/womenCollection.webp");
     background-position: center;
     background-size: cover;
     grid-column: 1/13;
@@ -226,7 +226,7 @@
   }
 
   .menCollection {
-    background-image: url("../public/menCollection.jpg");
+    background-image: url("../public/menCollection.webp");
     background-position: center;
     background-size: cover;
     grid-column: 1/13;
@@ -238,7 +238,7 @@
   }
 
   .genericCollection {
-    background-image: url("../public/genericCollection.jpg");
+    background-image: url("../public/genericCollection.webp");
     background-position: center;
     background-size: cover;
     grid-column: 1/13;
