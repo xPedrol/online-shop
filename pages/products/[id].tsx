@@ -10,7 +10,6 @@ import {TProduct} from "../../models/Product";
 import {useStore} from "../../contexts/StoreContext";
 import SetTitle from "../../components/SetTitle";
 import {useToastContext} from "../../contexts/ToastContext";
-import Image from "next/image";
 
 const ProductPage = () => {
     const {setActive, setToastMsg} = useToastContext();
@@ -70,7 +69,7 @@ const ProductPage = () => {
                     {product &&
                         <div className={styles.product}>
                             <div className={styles.productImage}>
-                                <Image layout={'responsive'} width={400} height={500} className={styles.image} src={product.image} alt={'product'}/>
+                                <img src={product.image} alt={'product'}/>
                             </div>
                             <div className={styles.productInfo}>
                                 <div className={styles.productHeader}>

@@ -2,10 +2,6 @@
 .cardLink{
   text-decoration: none;
   color: unset;
-  width: 100%;
-}
-.imageWrapper{
-
 }
 .card{
   max-width: 250px;
@@ -15,8 +11,10 @@
   cursor: pointer;
   transition: 100ms;
   .cardImageHeader{
-    .image{
+    img{
       border-radius: 10px 10px 0 0;
+      width: 100%;
+      max-height: 250px;
     }
   }
   .cardBody{
