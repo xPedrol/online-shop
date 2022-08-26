@@ -4,7 +4,6 @@ import stylesB from "../styles/Breadcrumb.module.scss";
 import Link from "next/link";
 import Container from "../components/Container";
 import {useStore} from "../contexts/StoreContext";
-import {HiOutlineFilter} from "react-icons/hi";
 import CartTable from "../components/CartTable";
 import {useToastContext} from "../contexts/ToastContext";
 

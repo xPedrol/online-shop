@@ -4,9 +4,9 @@ import Container from "../components/Container";
 import stylesB from "../styles/Breadcrumb.module.scss";
 import Link from "next/link";
 import {useStore} from "../contexts/StoreContext";
-import {IoIosArrowDown} from "react-icons/io";
 import CartTable from "../components/CartTable";
 import {useEffect} from "react";
+import {IoIosArrowDown} from "react-icons/io";
 
 const PurchasesPage = () => {
     const {purchases} = useStore();

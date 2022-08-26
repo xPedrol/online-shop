@@ -11,22 +11,20 @@
 
 .purchaseAccordion {
   width: 100%;
-  background-color: #181818;
   border-radius: 7px;
   padding: 10px;
   margin-bottom: 20px;
   overflow: hidden;
+  max-height: 100vh;
   cursor: pointer;
-  max-height: 500px;
   transition: max-height 200ms ease-in-out;
 }
 
 .purchaseAccordion.closed {
-  max-height: 50px;
+  max-height: 45px;
 }
 
 .purchaseAccordionHeader {
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,24 +33,25 @@
 
 .purchaseAccordionHeaderLeft {
   h3 {
-    @extend .poppins;
+    @extend .robotoCondensed;
   }
 }
-
+.purchaseAccordionBody{
+  overflow: auto;
+  max-height: 500px;
+}
 .purchaseAccordionFooter {
   margin-top: 10px;
   @extend .robotoCondensed;
   font-size: 13px;
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .arrowUpIcon {
-  font-size: 17px;
+  font-size: 19px;
   cursor: pointer;
-  color: #fff;
   display: flex;
   align-items: center;
 }
