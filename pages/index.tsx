@@ -4,7 +4,7 @@ import Container from "../components/Container";
 import {FiTrendingUp} from "react-icons/fi";
 import ProductCard from "../components/ProductCard";
 import {MdRecommend} from "react-icons/md";
-import {useStore} from "../contexts/Store";
+import {useStore} from "../contexts/StoreContext";
 import {useEffect, useState} from "react";
 import {TProduct} from "../models/Product";
 import SetTitle from "../components/SetTitle";

@@ -1,8 +1,8 @@
 import styles from '../styles/ProductCard.module.scss';
 import Link from "next/link";
 import {TProduct} from "../models/Product";
-import {useStore} from "../contexts/Store";
-import {useToastContext} from "../contexts/ToastProvider";
+import {useStore} from "../contexts/StoreContext";
+import {useToastContext} from "../contexts/ToastContext";
 
 type Props = {
     product: TProduct;

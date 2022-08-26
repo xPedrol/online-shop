@@ -1,6 +1,6 @@
 import {VscChromeClose} from "react-icons/vsc";
 import styles from "../styles/Toast.module.scss";
-import {useToastContext} from "../contexts/ToastProvider";
+import {useToastContext} from "../contexts/ToastContext";
 
 const Toast = () => {
     const {toastMsg, setActive} = useToastContext();

@@ -7,9 +7,9 @@ import {FiTrendingUp} from "react-icons/fi";
 import ProductCard from "../../components/ProductCard";
 import {useEffect, useState} from "react";
 import {TProduct} from "../../models/Product";
-import {useStore} from "../../contexts/Store";
+import {useStore} from "../../contexts/StoreContext";
 import SetTitle from "../../components/SetTitle";
-import {useToastContext} from "../../contexts/ToastProvider";
+import {useToastContext} from "../../contexts/ToastContext";
 
 const ProductPage = () => {
     const {setActive, setToastMsg} = useToastContext();

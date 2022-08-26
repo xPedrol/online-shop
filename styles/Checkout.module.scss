@@ -3,60 +3,6 @@
 .main {
   padding-top: 50px;
 }
-.responsiveTable{
-  width: 100%;
-  overflow: auto;
-}
-.checkout {
-
-  table {
-    border-collapse: collapse;
-    @extend .robotoCondensed;
-    border: 1px solid #e9ecef;
-    overflow: auto;
-    table-layout: auto;
-    min-width: 800px;
-    tbody {
-      display:block;
-      max-height: 60vh !important;
-      overflow:auto;
-    }
-    thead, tbody tr {
-      display:table;
-      width:100%;
-      table-layout:fixed;
-    }
-    td, th {
-      border-bottom: 1px solid #e9ecef;
-      text-align: left;
-      padding: 10px;
-      overflow: hidden;
-    }
-    th{
-      background-color:#181818;
-      color: #fff;
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-    tr{
-      cursor: pointer;
-    }
-    tr:hover{
-      background-color: #e9ecef;
-    }
-  }
-}
-
-.productCol {
-  display: flex;
-  align-items: center;
-
-  img {
-    width: 100px;
-    margin-right: 10px;
-    border-radius: 7px;
-  }
-}
 
 .checkoutFinish {
   margin-top: 20px;
@@ -74,20 +20,5 @@
     background-color: #f0e68c;
     letter-spacing: 2px;
     @extend .robotoCondensed;
-  }
-}
-.emptyCart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  text-transform: uppercase;
-  @extend .robotoCondensed;
-  p{
-    font-size: 25px;
-    font-weight: 700;
-  }
-  .emptyCartIcon{
-    font-size: 40px;
   }
 }

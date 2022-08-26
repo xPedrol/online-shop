@@ -1,6 +1,6 @@
 import styles from "../styles/ActionIcons.module.scss";
 import {BsCart3, BsHeart, BsPerson} from "react-icons/bs";
-import {useStore} from "../contexts/Store";
+import {useStore} from "../contexts/StoreContext";
 import {TProduct} from "../models/Product";
 import {TCartProduct} from "../models/CartProduct";
 import {AiOutlineShopping} from "react-icons/ai";

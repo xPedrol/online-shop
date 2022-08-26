@@ -3,15 +3,25 @@ import styles from "../styles/Checkout.module.scss";
 import stylesB from "../styles/Breadcrumb.module.scss";
 import Link from "next/link";
 import Container from "../components/Container";
-import {useStore} from "../contexts/Store";
-import {TbHourglassEmpty} from "react-icons/tb";
+import {useStore} from "../contexts/StoreContext";
 import {HiOutlineFilter} from "react-icons/hi";
+import CartTable from "../components/CartTable";
+import {useToastContext} from "../contexts/ToastContext";
 
 const CheckoutPage = () => {
-    const {cart} = useStore();
+    const {cart, addToPurchases} = useStore();
+    const {setActive, setToastMsg} = useToastContext();
+    const addPurchase = () => {
+        addToPurchases(cart);
+        setToastMsg({
+            title: 'New purchase',
+            msg: 'Purchase added with success',
+        });
+        setActive(true);
+    };
     return (
         <>
-            <SetTitle title={'Products'}/>
+            <SetTitle title={'Checkout'}/>
             <div className={styles.main}>
                 <Container>
                     <div className={stylesB.breadcrumb}>
@@ -23,45 +33,9 @@ const CheckoutPage = () => {
                         </div>
                     </div>
                     <div className={styles.checkout}>
-                        <div className={styles.responsiveTable}>
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {cart.cartProducts.map(cartProduct =>
-                                    <tr key={cartProduct.product.id}>
-                                        <td>
-                                            <div className={styles.productCol}>
-                                                <img alt={cartProduct.product.name} src={cartProduct.product.image}/>
-                                                <div>
-                                                    <p>{cartProduct.product.name}</p>
-                                                    <small>{cartProduct.product.tag}</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>R${cartProduct.product.price.toFixed(2)}</td>
-                                        <td>{cartProduct.quantity}</td>
-                                        <td>R${cartProduct.getTotalPrice().toFixed(2)}</td>
-                                    </tr>
-                                )}
-                                </tbody>
-                            </table>
-                        </div>
-                        {
-                            cart.cartProducts.length === 0 &&
-                            <div className={styles.emptyCart}>
-                                <HiOutlineFilter className={styles.emptyCartIcon}/>
-                                <p>Empty Cart</p>
-                            </div>
-                        }
+                        <CartTable cart={cart}/>
                         <div className={styles.checkoutFinish}>
-                            <button>Finish shopping</button>
+                            <button onClick={addPurchase}>Finish shopping</button>
                         </div>
                     </div>
                 </Container>
