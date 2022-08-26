@@ -4,6 +4,7 @@ export type TCart = {
     cartProducts: CartProduct[],
     addToCart: (product: TCartProduct) => void,
     removeFromCart: (product: TCartProduct) => void,
+    removeOneFromCart:(cartProduct: CartProduct) => void,
     updateCart: (product: TCartProduct) => void,
     clearCart: () => void,
     getTotal: () => number

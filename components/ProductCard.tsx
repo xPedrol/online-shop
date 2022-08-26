@@ -2,8 +2,6 @@ import styles from '../styles/ProductCard.module.scss';
 import Link from "next/link";
 import {TProduct} from "../models/Product";
 import {useStore} from "../contexts/Store";
-import {CartProduct} from "../models/CartProduct";
-import {Cart} from "../models/Cart";
 import {useToastContext} from "../contexts/ToastProvider";
 
 type Props = {
@@ -12,11 +10,9 @@ type Props = {
 const ProductCard = ({product}: Props) => {
     const {setActive, setToastMsg} = useToastContext();
     const {id, name, price, image: img, tag} = product;
-    const {cart, setCart} = useStore();
+    const {addToCart: sAddToCart} = useStore();
     const addToCart = () => {
-        const cartProduct = new CartProduct(product, 1);
-        cart.addToCart(cartProduct);
-        setCart(new Cart(cart));
+        sAddToCart(product,1);
         setToastMsg({
             title: 'Added to cart',
             msg: `${name} added to cart`,

@@ -1,10 +1,9 @@
-import SetTitle from "../../components/SetTitle";
-import stylesB from "../../styles/Breadcrumb.module.scss";
-import Container from "../../components/Container";
+import stylesB from "../styles/Breadcrumb.module.scss";
 import Link from "next/link";
-import styles from "../../styles/Contact.module.scss";
-import {FiTrendingUp} from "react-icons/fi";
+import styles from "../styles/Contact.module.scss";
 import {BiMessageAltDetail} from "react-icons/bi";
+import SetTitle from "../components/SetTitle";
+import Container from "../components/Container";
 
 const ContactPage = () => {
     return (
@@ -21,15 +20,15 @@ const ContactPage = () => {
                         </div>
                     </div>
                     <div className={styles.contact}>
-                       <div className={styles.col12}>
-                           <div className={styles.description}>
-                               <BiMessageAltDetail className={styles.trendingIcon}/>
-                               <div className={styles.descriptionTitle}>
-                                   <h2>Contact us</h2>
-                               </div>
-                               <p>Fill in the blank spaces below and send us a message</p>
-                           </div>
-                       </div>
+                        <div className={styles.col12}>
+                            <div className={styles.description}>
+                                <BiMessageAltDetail className={styles.trendingIcon}/>
+                                <div className={styles.descriptionTitle}>
+                                    <h2>Contact us</h2>
+                                </div>
+                                <p>Fill in the blank spaces below and send us a message</p>
+                            </div>
+                        </div>
                         <div className={styles.col6}>
                             <label htmlFor={'name'}>Name</label>
                             <input id={'name'} placeholder={'Type your name...'}/>

@@ -1,8 +1,22 @@
+@use "breakpoins" as *;
+
 .container {
+  padding: 10px;
   max-width: 1400px;
   margin: 0 auto;
 }
+
 .fluidContainer {
+  padding: 10px;
   max-width: 100%;
   margin: 0 auto;
+}
+
+@include min($b2xl) {
+  .fluidContainer {
+    padding: 0;
+  }
+  .container {
+    padding: 0;
+  }
 }

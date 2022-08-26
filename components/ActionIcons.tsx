@@ -2,15 +2,15 @@ import styles from "../styles/ActionIcons.module.scss";
 import {BsCart3, BsHeart, BsPerson} from "react-icons/bs";
 import {useStore} from "../contexts/Store";
 import {TProduct} from "../models/Product";
-import {Wishlist} from "../models/Wishlist";
-import {TbHourglassEmpty} from "react-icons/tb";
 import {TCartProduct} from "../models/CartProduct";
-import {Cart} from "../models/Cart";
 import {AiOutlineShopping} from "react-icons/ai";
+import Link from "next/link";
+import {HiOutlineFilter} from "react-icons/hi";
+
 type TActionIcons = {
-    parentDivClass:string
+    parentDivClass: string
 }
-const ActionIcons = ({parentDivClass}:TActionIcons) => {
+const ActionIcons = ({parentDivClass}: TActionIcons) => {
     return (
         <>
             <div className={`${styles.parent} ${parentDivClass}`}>
@@ -28,15 +28,13 @@ const ActionIcons = ({parentDivClass}:TActionIcons) => {
     );
 };
 const CartDropdown = () => {
-    const {cart, setCart} = useStore();
+    const {cart, removeFromCart: sRemoveFromCart} = useStore();
     const removeFromCart = (product: TCartProduct, allProduct = false) => {
-        const auxCart = new Cart(cart);
         if (allProduct) {
-            auxCart.removeFromCart(product);
+            sRemoveFromCart(product);
         } else {
-            auxCart.removeOneFromCart(product);
+            sRemoveFromCart(product, true);
         }
-        setCart(auxCart);
     };
     return (
         <div className={styles.cartDropdown}>
@@ -64,11 +62,13 @@ const CartDropdown = () => {
                             <p>R${cart.getTotal().toFixed(2)}</p>
                         </div>
                         <div className={styles.finishShopping}>
-                            <button><AiOutlineShopping className={styles.finishShoppingIcon}/>Checkout</button>
+                            <Link href={'/checkout'} passHref={true}>
+                                <button><AiOutlineShopping className={styles.finishShoppingIcon}/>Checkout</button>
+                            </Link>
                         </div>
                     </> :
                     <div className={styles.emptyCart}>
-                        <TbHourglassEmpty className={styles.emptyCartIcon}/>
+                        <HiOutlineFilter className={styles.emptyCartIcon}/>
                         <p>Empty Cart</p>
                     </div>
                 }
@@ -77,10 +77,9 @@ const CartDropdown = () => {
     );
 };
 const WishlistDropdown = () => {
-    const {wishlist, setWishlist} = useStore();
+    const {wishlist, removeFromWishlist: sRemoveFromWishlist} = useStore();
     const removeFromWishlist = (product: TProduct) => {
-        wishlist.removeProduct(product);
-        setWishlist(new Wishlist(wishlist));
+        sRemoveFromWishlist(product);
     };
     return (
         <div className={styles.cartDropdown}>
@@ -102,7 +101,7 @@ const WishlistDropdown = () => {
                         }
                     </> :
                     <div className={styles.emptyCart}>
-                        <TbHourglassEmpty className={styles.emptyCartIcon}/>
+                        <HiOutlineFilter className={styles.emptyCartIcon}/>
                         <p>Empty Wishlist</p>
                     </div>
                 }

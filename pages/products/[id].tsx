@@ -8,16 +8,13 @@ import ProductCard from "../../components/ProductCard";
 import {useEffect, useState} from "react";
 import {TProduct} from "../../models/Product";
 import {useStore} from "../../contexts/Store";
-import {CartProduct} from "../../models/CartProduct";
-import {Cart} from "../../models/Cart";
-import {Wishlist} from "../../models/Wishlist";
 import SetTitle from "../../components/SetTitle";
 import {useToastContext} from "../../contexts/ToastProvider";
 
 const ProductPage = () => {
     const {setActive, setToastMsg} = useToastContext();
     const router = useRouter();
-    const {products: storeProducts, cart, setCart, wishlist, setWishlist} = useStore();
+    const {products: storeProducts, addToCart: sAddToCart, addToWishlist: sAddToWishlist} = useStore();
     const {id} = router.query;
     const [product, setProduct] = useState<TProduct>();
     const [recommendProducts, setRecommendProducts] = useState<TProduct[] | any[]>([]);
@@ -26,10 +23,7 @@ const ProductPage = () => {
     const [cartInput, setCartInput] = useState<number>(1);
     const addToCart = () => {
         if (product) {
-            const cartProduct = new CartProduct(product, cartInput);
-            const auxCart = new Cart(cart);
-            auxCart.addToCart(cartProduct);
-            setCart(auxCart);
+            sAddToCart(product, cartInput);
             setToastMsg({
                 title: 'Added to cart',
                 msg: `${product.name} added to cart`,
@@ -39,8 +33,7 @@ const ProductPage = () => {
     };
     const addToWishlist = () => {
         if (product) {
-            wishlist.addProduct(product);
-            setWishlist(new Wishlist(wishlist));
+            sAddToWishlist(product);
             setToastMsg({
                 title: 'Added to wishlist',
                 msg: `${product.name} added to wishlist`,
@@ -54,7 +47,7 @@ const ProductPage = () => {
         setRecommendProducts(recommendProducts);
         const product = products.find((product) => product.id === Number(id));
         setProduct(product);
-    }, [id]);
+    }, [id, products]);
     return (
         <>
             <SetTitle title={product?.name}/>
