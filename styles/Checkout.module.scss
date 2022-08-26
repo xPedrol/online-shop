@@ -3,16 +3,19 @@
 .main {
   padding-top: 50px;
 }
-
-.checkout {
+.responsiveTable{
   width: 100%;
+  overflow: auto;
+}
+.checkout {
 
   table {
     border-collapse: collapse;
-    width: 100%;
     @extend .robotoCondensed;
     border: 1px solid #e9ecef;
     overflow: auto;
+    table-layout: auto;
+    min-width: 800px;
     tbody {
       display:block;
       max-height: 60vh !important;
@@ -27,6 +30,7 @@
       border-bottom: 1px solid #e9ecef;
       text-align: left;
       padding: 10px;
+      overflow: hidden;
     }
     th{
       background-color:#181818;
