@@ -1,11 +1,11 @@
 import styles from '../styles/Navbar.module.scss';
 import {AiOutlineMenu} from "react-icons/ai";
-import {BiSearchAlt} from "react-icons/bi";
 import Link from "next/link";
 import {FaShopify} from "react-icons/fa";
 import ActionIcons from "./ActionIcons";
 import {useSidebarContext} from "../contexts/SidebarContext";
 import NavbarSearch from "./NavbarSearch";
+import {navList} from "../contants/navList";
 
 const Navbar = () => {
     const useSidebar = useSidebarContext();
@@ -31,11 +31,11 @@ const Navbar = () => {
                 </div>
                 <nav className={styles.nav}>
                     <ul>
-                        <li><Link href={'/'} passHref={true}><a>Home</a></Link></li>
-                        <li><Link href={'/products'} passHref={true}><a>Products</a></Link></li>
-                        <li><Link href={'/contact'} passHref={true}><a>Contact</a></Link></li>
+                        {
+                            navList.map(item=><li key={item.id}><Link href={item.url} passHref={true}><a>{item.name}</a></Link></li>)
+                        }
                     </ul>
-                   <NavbarSearch/>
+                    <NavbarSearch/>
                 </nav>
             </div>
         </header>
