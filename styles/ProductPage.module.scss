@@ -23,13 +23,15 @@
   justify-content: center;
   flex-direction: column;
 
-  .productImage {
+  .productImageDiv {
+    display: block;
     flex: 50%;
-    max-width: 500px;
+    width: 400px;
+    max-width: 400px;
+    height: 400px;
     margin: 0 auto;
 
-    img {
-      width: 100%;
+    .productImage {
       border-radius: 10px;
     }
   }
@@ -199,8 +201,8 @@
   .product {
     flex-direction: row;
 
-    .productImage {
-      max-width: 400px;
+    .productImageDiv {
+      //max-width: 400px;
     }
     .productInfo{
       .productInfoActions {

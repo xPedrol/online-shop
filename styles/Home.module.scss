@@ -197,7 +197,6 @@
   gap: 10px;
 
   > * {
-    background-color: #181818;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -289,7 +288,6 @@
       .collectionBg{
         border-radius: 0 0 20px 0;
       }
-      border-radius: 0 0 20px 0;
       grid-row: 7/13;
       grid-column: 7/13;
 
@@ -302,7 +300,6 @@
       .collectionBg{
         border-radius: 20px 0 0 20px;
       }
-      border-radius: 20px 0 0 20px;
       grid-row: 1/13;
       grid-column: 1/7;
 
@@ -315,7 +312,6 @@
       .collectionBg{
         border-radius: 0 20px 0 0;
       }
-      border-radius: 0 20px 0 0;
       grid-row: 1/7;
       grid-column: 7/13;
     }

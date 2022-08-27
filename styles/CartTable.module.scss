@@ -52,10 +52,11 @@
   display: flex;
   align-items: center;
 
-  img {
-    width: 100px;
-    margin-right: 10px;
+  .productImage {
     border-radius: 7px;
+  }
+  .productContent{
+    margin-left: 10px;
   }
 }
 

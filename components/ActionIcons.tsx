@@ -6,6 +6,7 @@ import {TCartProduct} from "../models/CartProduct";
 import {AiOutlineShopping} from "react-icons/ai";
 import Link from "next/link";
 import {HiOutlineFilter} from "react-icons/hi";
+import Image from "next/image";
 
 type TActionIcons = {
     parentDivClass: string
@@ -44,7 +45,15 @@ const CartDropdown = () => {
                         {
                             cart.cartProducts.map((cartProduct) =>
                                 <div key={cartProduct.product.id} className={styles.cartItem}>
-                                    <img src={cartProduct.product.image} alt={cartProduct.product.name}/>
+                                    <Image
+                                        alt={cartProduct.product.name}
+                                        src={cartProduct.product.image}
+                                        layout="fixed"
+                                        width={70}
+                                        height={70}
+                                        objectFit="cover"
+                                        quality={100}
+                                    />
                                     <div className={styles.cartItemContent}>
                                         <h5>{cartProduct.product.name}</h5>
                                         <p>{cartProduct.quantity}x -
@@ -89,7 +98,15 @@ const WishlistDropdown = () => {
                         {
                             wishlist.products.map((product) =>
                                 <div key={product.id} className={styles.cartItem}>
-                                    <img src={product.image} alt={product.name}/>
+                                    <Image
+                                        alt={product.name}
+                                        src={product.image}
+                                        layout="fixed"
+                                        width={70}
+                                        height={70}
+                                        objectFit="cover"
+                                        quality={100}
+                                    />
                                     <div className={styles.cartItemContent}>
                                         <h5>{product.name}</h5>
                                         <p>R${product.price.toFixed(2)}</p>

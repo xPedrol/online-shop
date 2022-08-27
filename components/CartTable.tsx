@@ -1,6 +1,7 @@
 import {TCart} from "../models/Cart";
 import styles from "../styles/CartTable.module.scss";
 import {HiOutlineFilter} from "react-icons/hi";
+import Image from "next/image";
 
 type TCartTable = {
     cart: TCart;
@@ -23,8 +24,16 @@ const CartTable = ({cart}: TCartTable) => {
                         <tr key={cartProduct.product.id}>
                             <td>
                                 <div className={styles.productCol}>
-                                    <img alt={cartProduct.product.name} src={cartProduct.product.image}/>
-                                    <div>
+                                    <Image
+                                        className={styles.productImage}
+                                        alt={cartProduct.product.name}
+                                        src={cartProduct.product.image}
+                                        width={100}
+                                        height={100}
+                                        objectFit="cover"
+                                        quality={100}
+                                    />
+                                    <div className={styles.productContent}>
                                         <p>{cartProduct.product.name}</p>
                                         <small>{cartProduct.product.tag}</small>
                                     </div>

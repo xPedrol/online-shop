@@ -4,6 +4,7 @@ import {useState} from "react";
 import {constProducts} from "../contants/products";
 import Link from "next/link";
 import {TbHourglassEmpty} from "react-icons/tb";
+import Image from "next/image";
 
 const NavbarSearch = () => {
     const [products, setProducts] = useState(constProducts);
@@ -50,7 +51,15 @@ const NavbarSearch = () => {
                         products && products.length > 0 ? products.map((product) =>
                                 <Link key={product.id} href={`/products/${product.id}`} passHref={true}>
                                     <div className={styles.searchDropdownItem}>
-                                        <img src={product.image} alt={product.name}/>
+                                        <Image
+                                            className={styles.productImage}
+                                            alt={product.name}
+                                            src={product.image}
+                                            width={70}
+                                            height={70}
+                                            objectFit="cover"
+                                            quality={100}
+                                        />
                                         <div className={styles.cartItemContent}>
                                             <h5>{product.name}</h5>
                                             <p>R${product.price.toFixed(2)}</p>
