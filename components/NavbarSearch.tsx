@@ -42,7 +42,7 @@ const NavbarSearch = () => {
             <input id={'searchInput'} placeholder={'Pesquisar...'} onChange={(e) => search(e.target.value)}
                    onFocus={toggleDropdown}
                    onBlur={toggleDropdown}/>
-            <button>
+            <button aria-label={'Products search button'} title={'Products search button'}>
                 <BiSearchAlt className={styles.searchIcon}/>
             </button>
             <div className={styles.searchDropdown}>
