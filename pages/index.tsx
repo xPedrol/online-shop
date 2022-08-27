@@ -8,6 +8,7 @@ import {useStore} from "../contexts/StoreContext";
 import {useEffect, useState} from "react";
 import {TProduct} from "../models/Product";
 import SetTitle from "../components/SetTitle";
+import Image from "next/image";
 
 const Home: NextPage = () => {
     const store = useStore();
@@ -30,6 +31,13 @@ const Home: NextPage = () => {
         <>
             <SetTitle title={'Home'}/>
             <div className={styles.promo}>
+                <Image
+                    alt="Promo"
+                    src="/slide3.webp"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                />
                 <div className={styles.promoContent}>
                     <div className={styles.promoContentText}>
                         <h4>ENJOY THE SUPER OFFER</h4>
@@ -56,6 +64,14 @@ const Home: NextPage = () => {
                 </div>
                 <div className={styles.collections}>
                     <div className={styles.womenCollection}>
+                        <Image
+                            className={styles.collectionBg}
+                            alt="Promo"
+                            src="/womenCollection.webp"
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                        />
                         <div className={styles.collectionContent}>
                             <h3>Sales 10% OFF</h3>
                             <h1>Women&apos;s Collection</h1>
@@ -63,6 +79,14 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                     <div className={styles.menCollection}>
+                        <Image
+                            className={styles.collectionBg}
+                            alt="Promo"
+                            src="/menCollection.webp"
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                        />
                         <div className={styles.collectionContent}>
                             <h3>Sales 10% OFF</h3>
                             <h1>Men&apos;s Collection</h1>
@@ -70,6 +94,14 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                     <div className={styles.genericCollection}>
+                        <Image
+                            className={styles.collectionBg}
+                            alt="Promo"
+                            src="/genericCollection.webp"
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                        />
                         <div className={styles.collectionContent}>
                             <h3>Sales 10% OFF</h3>
                             <h1>Generic&apos;s Collection</h1>

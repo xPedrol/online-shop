@@ -41,17 +41,17 @@
 .promo {
   z-index: 1!important;
   position: relative;
-  height: 89vh;
+  height: 100%;
   width: 100%;
-  min-height: 400px;
+  min-height: 500px;
   background-color: #fff;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  background-image: url("../public/slide3.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  //background-image: url("../public/slide3.webp");
+  //background-size: cover;
+  //background-repeat: no-repeat;
+  //background-position: center;
 }
 
 .promoContentText {
@@ -72,6 +72,7 @@
 }
 
 .promoContent {
+  z-index: 997 !important;
   opacity: 1;
   width: 100%;
   margin-inline: auto;
@@ -209,14 +210,16 @@
   }
 
   .collectionContent {
+    z-index: 997 !important;
     @extend .imgContentGrid;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
   .womenCollection {
-    background-image: url("../public/womenCollection.webp");
-    background-position: center;
-    background-size: cover;
+    position: relative;
+    //background-image: url("../public/womenCollection.webp");
+    //background-position: center;
+    //background-size: cover;
     grid-column: 1/13;
     grid-row: 1/5;
   }
@@ -226,9 +229,10 @@
   }
 
   .menCollection {
-    background-image: url("../public/menCollection.webp");
-    background-position: center;
-    background-size: cover;
+    position: relative;
+    //background-image: url("../public/menCollection.webp");
+    //background-position: center;
+    //background-size: cover;
     grid-column: 1/13;
     grid-row: 5/9;
   }
@@ -238,9 +242,10 @@
   }
 
   .genericCollection {
-    background-image: url("../public/genericCollection.webp");
-    background-position: center;
-    background-size: cover;
+    position: relative;
+    //background-image: url("../public/genericCollection.webp");
+    //background-position: center;
+    //background-size: cover;
     grid-column: 1/13;
     grid-row: 9/13;
 
@@ -281,6 +286,9 @@
   }
   .collections {
     .genericCollection {
+      .collectionBg{
+        border-radius: 0 0 20px 0;
+      }
       border-radius: 0 0 20px 0;
       grid-row: 7/13;
       grid-column: 7/13;
@@ -291,6 +299,9 @@
     }
 
     .womenCollection {
+      .collectionBg{
+        border-radius: 20px 0 0 20px;
+      }
       border-radius: 20px 0 0 20px;
       grid-row: 1/13;
       grid-column: 1/7;
@@ -301,6 +312,9 @@
     }
 
     .menCollection {
+      .collectionBg{
+        border-radius: 0 20px 0 0;
+      }
       border-radius: 0 20px 0 0;
       grid-row: 1/7;
       grid-column: 7/13;
