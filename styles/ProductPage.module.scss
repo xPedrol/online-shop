@@ -24,9 +24,10 @@
   flex-direction: column;
 
   .productImageDiv {
-    display: block;
+    position: relative;
+    //display: block;
     flex: 50%;
-    width: 400px;
+    width: 90vw;
     max-width: 400px;
     height: 400px;
     margin: 0 auto;

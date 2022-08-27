@@ -9,6 +9,7 @@
   justify-content: stretch;
   position: relative;
   margin-bottom: 10px;
+  margin-top: 10px;
 
   input {
     width: 100%;
@@ -111,6 +112,13 @@
     border: 1px solid #181818 !important;
   }
 }
+@include min($bMd) {
+  .search {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
 @include min($bLg) {
   .search {
     padding-left: 0;
